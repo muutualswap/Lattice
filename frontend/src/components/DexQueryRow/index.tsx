@@ -96,8 +96,6 @@ function DexQueryRow({ name, code, id, active }: DexQueryRow) {
     parsedValue,
     splitContract,
     outputCurrency,
-    dis,
-    sum,
     _flag,
     quotaQueryCallback,
     outputCurrencyId
