@@ -7,7 +7,6 @@ export interface Colors {
   black: Color
 
   // text
-  label: Color
   text1: Color
   text2: Color
   text3: Color
@@ -15,12 +14,6 @@ export interface Colors {
   text5: Color
 
   // backgrounds / greys
-  baseBg: Color
-  header: Color
-  swapBg: Color
-  swapInput: Color
-  swapSelect: Color
-  globalBg: Color
   bg1: Color
   bg2: Color
   bg3: Color
@@ -28,7 +21,6 @@ export interface Colors {
   bg5: Color
 
   modalBG: Color
-  modalCBG: Color
   advancedBG: Color
 
   //blues
