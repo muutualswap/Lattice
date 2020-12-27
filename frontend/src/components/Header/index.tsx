@@ -180,7 +180,19 @@ const StyledNavPoolLink = styled(StyledNavLink)`
   color: white;
 `
 
-const StyledNavExternalLink = styled(StyledNavLink)`
+const StyledNavFarmLink = styled(StyledNavLink)`
+  background: linear-gradient(180deg, #f19e9c 0%, rgba(241, 158, 156, 0) 100%);
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
+  color: white;
+`
+
+const StyledNavVoteLink = styled(StyledNavLink)`
+  background: linear-gradient(180deg, #f19e9c 0%, rgba(241, 158, 156, 0) 100%);
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
+  color: white;
+`
+
+const StyledNavChartsLink = styled(StyledNavLink)`
   background: linear-gradient(180deg, #f19e9c 0%, rgba(241, 158, 156, 0) 100%);
   box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
   color: white;
@@ -231,14 +243,14 @@ export default function Header() {
             {t('pool')}
           </StyledNavLink>
           <StyledNavLink id={`stake-nav-link`} to={'/uni'}>
-            Farming
+            Farm
           </StyledNavLink>
           <StyledNavLink id={`stake-nav-link`} to={'/vote'}>
             Vote
           </StyledNavLink>
-          <StyledNavExternalLink id={`stake-nav-link`} href={'https://bigswap.info'}>
+          <StyledNavLink id={`stake-nav-link`} href={'https://bigswap.info'}>
             Charts <span style={{ fontSize: '11px' }}>↗</span>
-          </StyledNavExternalLink>
+          </StyledNavLink>
           <StyledNavAggreLink id={`aggregation-nav-link`} to={'/poly'}>
             {t('aggregation')}
           </StyledNavAggreLink>
