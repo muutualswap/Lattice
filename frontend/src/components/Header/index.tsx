@@ -219,7 +219,7 @@ export default function Header() {
           <StyledNavPoolLink id={`pool-nav-link`} to={'/pool'}>
             {t('pool')}
           </StyledNavPoolLink>
-          <StyledNavEarnLink id={`pool-nav-link`} to={'/pool'}>
+          <StyledNavEarnLink id={`earn-nav-link`} to={'/earn'}>
             {t('earn')}
           </StyledNavEarnLink> 
           <StyledNavAggreLink id={`aggregation-nav-link`} to={'/poly'}>
