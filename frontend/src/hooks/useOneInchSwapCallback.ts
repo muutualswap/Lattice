@@ -188,6 +188,7 @@ function useSwapCallArguments(
     return swapMethods.map(parameters => ({ parameters, contract }))
   }, [
     account,
+    oneSplit,
     allowedSlippage,
     chainId,
     deadline,
@@ -197,7 +198,8 @@ function useSwapCallArguments(
     destToken,
     input,
     output,
-    distribution
+    distribution,
+    flag
   ])
 }
 
@@ -374,10 +376,7 @@ export function useSwapCallback(
     output,
     input,
     fromToken,
-    inputCurrencyId,
-    outputCurrencyId,
-    destToken,
-    distribution
+    destToken
   ])
 }
 
