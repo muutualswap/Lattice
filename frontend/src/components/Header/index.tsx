@@ -171,7 +171,7 @@ const StyledNavLink = styled(NavLink)`
   min-width: 60px;
 `
 
-const StyledExternalLink = styled(ExternalLink)'
+const StyledExternalLink = styled(ExternalLink)
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: left;
   border-radius: 3rem;
