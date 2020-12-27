@@ -208,12 +208,31 @@ export default function Header() {
           </LattIcon>
         </Title>
         <HeaderLinks>
-          <StyledNavSwapLink id={`swap-nav-link`} to={'/swap'}>
+          <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
             {t('swap')}
-          </StyledNavSwapLink>
-          <StyledNavPoolLink id={`pool-nav-link`} to={'/pool'}>
+          </StyledNavLink>
+          <StyledNavLink
+            id={`pool-nav-link`}
+            to={'/pool'}
+            isActive={(match, { pathname }) =>
+              Boolean(match) ||
+              pathname.startsWith('/add') ||
+              pathname.startsWith('/remove') ||
+              pathname.startsWith('/create') ||
+              pathname.startsWith('/find')
+            }
+          >
             {t('pool')}
-          </StyledNavPoolLink>
+          </StyledNavLink>
+          <StyledNavLink id={`stake-nav-link`} to={'/uni'}>
+            Farming
+          </StyledNavLink>
+          <StyledNavLink id={`stake-nav-link`} to={'/vote'}>
+            Vote
+          </StyledNavLink>
+          <StyledExternalLink id={`stake-nav-link`} href={'https://bigswap.info'}>
+            Charts <span style={{ fontSize: '11px' }}>↗</span>
+          </StyledExternalLink>
           <StyledNavAggreLink id={`aggregation-nav-link`} to={'/poly'}>
             {t('aggregation')}
           </StyledNavAggreLink>
