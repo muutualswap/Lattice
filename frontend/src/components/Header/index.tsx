@@ -39,7 +39,6 @@ const HeaderControls = styled.div`
   flex-direction: row;
   align-items: center;
   justify-self: flex-end;
-
   ${({ theme }) => theme.mediaWidth.upToMedium`
     flex-direction: row;
     justify-content: space-between;
@@ -174,6 +173,7 @@ const StyledNavSwapLink = styled(StyledNavLink)`
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
   color: white;
 `
+
 const StyledNavPoolLink = styled(StyledNavLink)`
   background: linear-gradient(180deg, #f19e9c 0%, rgba(241, 158, 156, 0) 100%);
   box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
