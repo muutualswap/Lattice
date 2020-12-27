@@ -173,7 +173,6 @@ const StyledNavSwapLink = styled(StyledNavLink)`
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
   color: white;
 `
-
 const StyledNavPoolLink = styled(StyledNavLink)`
   background: linear-gradient(180deg, #f19e9c 0%, rgba(241, 158, 156, 0) 100%);
   box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
@@ -182,7 +181,7 @@ const StyledNavPoolLink = styled(StyledNavLink)`
 
 const StyledNavAggreLink = styled(StyledNavLink)`
   background: linear-gradient(180deg, #abf4fa 0%, rgba(171, 244, 250, 0) 100%);
-  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
   color: white;
 `
 
@@ -208,31 +207,12 @@ export default function Header() {
           </LattIcon>
         </Title>
         <HeaderLinks>
-          <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
+          <StyledNavSwapLink id={`swap-nav-link`} to={'/swap'}>
             {t('swap')}
-          </StyledNavLink>
-          <StyledNavLink
-            id={`pool-nav-link`}
-            to={'/pool'}
-            isActive={(match, { pathname }) =>
-              Boolean(match) ||
-              pathname.startsWith('/add') ||
-              pathname.startsWith('/remove') ||
-              pathname.startsWith('/create') ||
-              pathname.startsWith('/find')
-            }
-          >
+          </StyledNavSwapLink>
+          <StyledNavPoolLink id={`pool-nav-link`} to={'/pool'}>
             {t('pool')}
-          </StyledNavLink>
-          <StyledNavLink id={`stake-nav-link`} to={'/uni'}>
-            Farm
-          </StyledNavLink>
-          <StyledNavLink id={`stake-nav-link`} to={'/vote'}>
-            Vote
-          </StyledNavLink>
-          <StyledNavLink id={`stake-nav-link`} href={'https://bigswap.info'}>
-            Charts <span style={{ fontSize: '11px' }}>↗</span>
-          </StyledNavLink>
+          </StyledNavPoolLink>
           <StyledNavAggreLink id={`aggregation-nav-link`} to={'/poly'}>
             {t('aggregation')}
           </StyledNavAggreLink>
