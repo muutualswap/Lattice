@@ -299,8 +299,8 @@ div[data-reach-dialog-content]{
 
 export const ThemedGlobalStyle = createGlobalStyle`
 html {
-  color: ${({ theme }) => theme.text1};
-  background-color: ${({ theme }) => theme.bg2};
+  color: ${({ theme }) => theme.white};
+  background-color: ${({ theme }) => theme.swapinput};
 }
 body {
   min-height: 100vh;
