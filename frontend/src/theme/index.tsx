@@ -297,19 +297,30 @@ div[data-reach-dialog-content]{
 }
 `
 
+
 export const ThemedGlobalStyle = createGlobalStyle`
 html {
   color: ${({ theme }) => theme.white};
-  background-color: ${({ theme }) => theme.swapinput};
 }
+  :global {
+    .ant-select-selector {
+      background: ${({ theme }) => theme.swapInput};
+    }
+  }
 body {
+  color: ${({ theme }) => theme.label};
   min-height: 100vh;
-  background-position: 0 -30vh;
-  background-repeat: no-repeat;
-  background-image: ${({ theme }) =>
-    `radial-gradient(50% 50% at 50% 50%, ${transparentize(0.9, theme.primary1)} 0%, ${transparentize(
-      1,
-      theme.bg1
-    )} 100%)`};
+  background: url(${() => bg}) no-repeat top;
+  background-size: cover;
+  position: relative;
+  &:before{
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: '';
+    background-color: rgba(0,0,0, 0.4);
+  }
 }
 `
