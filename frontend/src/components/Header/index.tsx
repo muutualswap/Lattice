@@ -171,32 +171,18 @@ const StyledNavLink = styled(NavLink)`
   min-width: 60px;
 `
 
-const StyledExternalLink = styled(ExternalLink)'
-  ${({ theme }) => theme.flexRowNoWrap};
-  height: 30px;
-  border-radius: 10px;
-  outline: none;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 12px;
-  width: fit-content;
-  margin: 0 10px;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0.5rem;
-  min-width: 60px;
-'}
-'
-
-
 const StyledNavSwapLink = styled(StyledNavLink)`
   background: linear-gradient(180deg, #abf4fa 0%, rgba(171, 244, 250, 0) 100%);
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
   color: white;
 `
 const StyledNavPoolLink = styled(StyledNavLink)`
+  background: linear-gradient(180deg, #f19e9c 0%, rgba(241, 158, 156, 0) 100%);
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
+  color: white;
+`
+
+const StyledNavExternalLink = styled(StyledNavLink)`
   background: linear-gradient(180deg, #f19e9c 0%, rgba(241, 158, 156, 0) 100%);
   box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
   color: white;
@@ -252,9 +238,9 @@ export default function Header() {
           <StyledNavLink id={`stake-nav-link`} to={'/vote'}>
             Vote
           </StyledNavLink>
-          <StyledExternalLink id={`stake-nav-link`} href={'https://bigswap.info'}>
+          <StyledNavExternalLink id={`stake-nav-link`} href={'https://bigswap.info'}>
             Charts <span style={{ fontSize: '11px' }}>↗</span>
-          </StyledExternalLink>
+          </StyledNavExternalLink>
           <StyledNavAggreLink id={`aggregation-nav-link`} to={'/poly'}>
             {t('aggregation')}
           </StyledNavAggreLink>
