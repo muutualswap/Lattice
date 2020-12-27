@@ -187,7 +187,9 @@ const StyledExternalLink = styled(ExternalLink)'
   justify-content: center;
   padding: 0 0.5rem;
   min-width: 60px;
-`
+'}
+'
+
 
 const StyledNavSwapLink = styled(StyledNavLink)`
   background: linear-gradient(180deg, #abf4fa 0%, rgba(171, 244, 250, 0) 100%);
