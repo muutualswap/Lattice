@@ -179,6 +179,12 @@ const StyledNavPoolLink = styled(StyledNavLink)`
   color: white;
 `
 
+const StyledNavEarnLink = styled(StyledNavLink)`
+  background: linear-gradient(180deg, #f19e9c 0%, rgba(241, 158, 156, 0) 100%);
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
+  color: white;
+`
+
 const StyledNavAggreLink = styled(StyledNavLink)`
   background: linear-gradient(180deg, #abf4fa 0%, rgba(171, 244, 250, 0) 100%);
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
@@ -213,6 +219,9 @@ export default function Header() {
           <StyledNavPoolLink id={`pool-nav-link`} to={'/pool'}>
             {t('pool')}
           </StyledNavPoolLink>
+          <StyledNavEarnLink id={`pool-nav-link`} to={'/pool'}>
+            {t('earn')}
+          </StyledNavEarnLink> 
           <StyledNavAggreLink id={`aggregation-nav-link`} to={'/poly'}>
             {t('aggregation')}
           </StyledNavAggreLink>
