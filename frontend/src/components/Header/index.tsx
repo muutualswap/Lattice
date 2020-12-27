@@ -171,30 +171,22 @@ const StyledNavLink = styled(NavLink)`
   min-width: 60px;
 `
 
-const StyledExternalLink = styled(ExternalLink)
-  ${({ theme }) => theme.flexRowNoWrap}
-  align-items: left;
-  border-radius: 3rem;
+const StyledExternalLink = styled(ExternalLink)'
+  ${({ theme }) => theme.flexRowNoWrap};
+  height: 30px;
+  border-radius: 10px;
   outline: none;
   cursor: pointer;
   text-decoration: none;
-  color: ${({ theme }) => theme.text2};
-  font-size: 1rem;
+  font-size: 12px;
   width: fit-content;
-  margin: 0 12px;
+  margin: 0 10px;
   font-weight: 500;
-  &.${activeClassName} {
-    border-radius: 12px;
-    font-weight: 600;
-    color: ${({ theme }) => theme.text1};
-  }
-  :hover,
-  :focus {
-    color: ${({ theme }) => darken(0.1, theme.text1)};
-  }
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-      display: none;
-`}
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+  min-width: 60px;
 `
 
 const StyledNavSwapLink = styled(StyledNavLink)`
