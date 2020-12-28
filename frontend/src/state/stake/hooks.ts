@@ -24,7 +24,7 @@ export const STAKING_REWARDS_INFO: {
     },
     {
       tokens: [WETH[ChainId.MAINNET], USDC],
-      stakingRewardAddress: ''
+      stakingRewardAddress: '0x7FBa4B8Dc5E7616e59622806932DBea72537A56b'
     },
     {
       tokens: [WETH[ChainId.MAINNET], USDT],
