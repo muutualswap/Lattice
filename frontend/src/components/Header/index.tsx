@@ -216,6 +216,12 @@ export default function Header() {
           <StyledNavLink id={`stake-nav-link`} to={'/uni'}>
             {t('earn')}
           </StyledNavLink> 
+          <StyledNavLink id={`stake-nav-link`} to={'/vote'}>
+            Vote
+          </StyledNavLink>
+          <StyledNavLink id={`stake-nav-link`} href={'https://bigswap.info'}>
+            Charts <span style={{ fontSize: '11px' }}>↗</span>
+          </StyledNavLink>
           <StyledNavAggreLink id={`aggregation-nav-link`} to={'/poly'}>
             {t('aggregation')}
           </StyledNavAggreLink>
