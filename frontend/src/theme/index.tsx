@@ -9,7 +9,6 @@ import styled, {
 import { useIsDarkMode } from '../state/user/hooks'
 import { Text, TextProps } from 'rebass'
 import { Colors } from './styled'
-import xETHBackground from '../assets/images/xETH-bg.png'
 
 export * from './components'
 
