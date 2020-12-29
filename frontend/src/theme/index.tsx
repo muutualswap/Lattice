@@ -1,3 +1,4 @@
+// import { transparentize } from 'polished'
 import React, { useMemo } from 'react'
 import styled, {
   ThemeProvider as StyledComponentsThemeProvider,
@@ -8,7 +9,7 @@ import styled, {
 import { useIsDarkMode } from '../state/user/hooks'
 import { Text, TextProps } from 'rebass'
 import { Colors } from './styled'
-import bg from '../assets/svg/bg.jpeg'
+import xETHBackground from '../assets/images/xETH-bg.png'
 
 export * from './components'
 
@@ -41,49 +42,41 @@ export function colors(darkMode: boolean): Colors {
     black,
 
     // text
-    label: darkMode ? '#FFFFFF' : '#FFFFFF',
     text1: darkMode ? '#FFFFFF' : '#FFFFFF',
-    text2: darkMode ? '#FFFFFF' : '#FFFFFF', // swap label
-    text3: darkMode ? '#FFFFFF' : '#FFFFFF',
+    text2: darkMode ? '#C3C5CB' : '#565A69',
+    text3: darkMode ? '#6C7284' : '#888D9B',
     text4: darkMode ? '#565A69' : '#C3C5CB',
     text5: darkMode ? '#2C2F36' : '#EDEEF2',
 
     // backgrounds / greys
-    baseBg: darkMode ? 'rgba(55, 97, 111, 0.9)' : 'rgba(55, 97, 111, 0.9)',
-    header: darkMode ? '#EAFCFE' : '#EAFCFE',
-    swapBg: darkMode ? 'rgba(55, 97, 111, 0.9)' : 'rgba(55, 97, 111, 0.9)',
-    swapInput: darkMode ? '#527683' : '#527683',
-    swapSelect: darkMode ? '#ABF4FA' : '#ABF4FA',
-    globalBg: darkMode ? '#FFFFFF' : '#FFFFFF',
-    bg1: darkMode ? 'rgba(55, 97, 111, 0.9)' : 'rgba(55, 97, 111, 0.9)',
-    bg2: darkMode ? 'rgba(55, 97, 111, 0.9)' : 'rgba(55, 97, 111, 0.9)',
-    bg3: darkMode ? 'rgba(55, 97, 111, 0.9)' : 'rgba(55, 97, 111, 0.9)',
-    bg4: darkMode ? 'rgba(55, 97, 111, 0.9)' : 'rgba(55, 97, 111, 0.9)',
-    bg5: darkMode ? 'rgba(55, 97, 111, 0.9)' : 'rgba(55, 97, 111, 0.9)',
-
+    bg1: darkMode ? `url(${xETHBackground })` : `url(${xETHBackground })`,
+    bg2: darkMode ? '#2C2F36' : '#F7F8FA',
+    bg3: darkMode ? '#40444F' : '#EDEEF2',
+    bg4: darkMode ? '#565A69' : '#CED0D9',
+    bg5: darkMode ? '#6C7284' : '#888D9B',
+ 
     //specialty colors
-    modalBG: darkMode ? 'rgba(0,0,0,0.4)' : 'rgba(0,0,0,0.4)',
-    modalCBG: darkMode ? 'rgba(55, 97, 111, 1)' : 'rgba(55, 97, 111, 1)',
-    advancedBG: darkMode ? 'rgba(55, 97, 111, 0.9)' : 'rgba(55, 97, 111, 0.9)',
-
+    modalBG: darkMode ? 'rgba(0,0,0,.425)' : 'rgba(0,0,0,0.3)',
+    advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.6)',
+ 
     //primary colors
-    primary1: darkMode ? '#ABF4FA' : '#ABF4FA',
+    primary1: darkMode ? '#2172E5' : 'rgba(273,163,12,1)',
     primary2: darkMode ? '#3680E7' : '#FF8CC3',
     primary3: darkMode ? '#4D8FEA' : '#FF99C9',
-    primary4: darkMode ? '#376bad70' : '#F6DDE8',
-    primary5: darkMode ? '#153d6f70' : '#FDEAF1',
+    primary4: darkMode ? '#376bad70' : 'rgba(273,163,12,1)',
+    primary5: darkMode ? '#153d6f70' : 'transparent',
 
     // color text
-    primaryText1: darkMode ? '#6da8ff' : '#ff007a',
+    primaryText1: darkMode ? '#6da8ff' : 'rgba(273,163,12,1)',
 
     // secondary colors
-    secondary1: darkMode ? '#2172E5' : '#ff007a',
-    secondary2: darkMode ? '#17000b26' : '#F6DDE8',
-    secondary3: darkMode ? '#17000b26' : '#FDEAF1',
+    secondary1: darkMode ? '#2172E5' : 'rgba(273,163,12,1)',
+    secondary2: darkMode ? '#17000b26' : 'rgba(273,163,12,1)',
+    secondary3: darkMode ? '#17000b26' : '#FFFFFF',
 
     // other
-    red1: '#F19E9C',
-    red2: '#F19E9C',
+    red1: '#FF6871',
+    red2: '#F82D3A',
     green1: '#27AE60',
     yellow1: '#FFE270',
     yellow2: '#F3841E',
@@ -122,6 +115,7 @@ export function theme(darkMode: boolean): DefaultTheme {
     `
   }
 }
+
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
   const darkMode = useIsDarkMode()
@@ -185,12 +179,12 @@ export const TYPE = {
 
 export const FixedGlobalStyle = createGlobalStyle`
 html, input, textarea, button {
-  font-family: 'Century Gothic', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-display: fallback;
 }
 @supports (font-variation-settings: normal) {
   html, input, textarea, button {
-    font-family: 'Century Gothic', sans-serif;
+    font-family: 'Inter var', sans-serif;
   }
 }
 html,
@@ -198,6 +192,9 @@ body {
   margin: 0;
   padding: 0;
 }
+ a {
+   color: ${colors(false).blue1}; 
+ }
 * {
   box-sizing: border-box;
 }
@@ -211,32 +208,22 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on;
+  
 }
 `
 
 export const ThemedGlobalStyle = createGlobalStyle`
 html {
-  color: ${({ theme }) => theme.white};
+  color: ${({ theme }) => theme.text1};
+  background-color: ${({ theme }) => theme.bg2};
 }
-  :global {
-    .ant-select-selector {
-      background: ${({ theme }) => theme.swapInput};
-    }
-  }
 body {
-  color: ${({ theme }) => theme.label};
   min-height: 100vh;
-  background: url(${() => bg}) no-repeat top;
+  background-position: 0 -30vh;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  &:before{
-    width: 100%;
-    min-height: 100vh;
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    content: '';
-    background-color: rgba(0,0,0, 0.4);
-  }
+  background-color: black;
+  background-image: ${({ theme }) => theme.bg1};
 }
 `
